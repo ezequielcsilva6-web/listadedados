@@ -1,0 +1,62 @@
+.floating-logo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  animation: float 3s ease-in-out infinite;
+}
+
+.floating-logo img {
+  width: 120px;
+  height: auto;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  transition: all 0.3s ease;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.floating-logo img:hover {
+  width: 140px;
+  filter: drop-shadow(0 6px 16px rgba(220, 20, 60, 0.3));
+  opacity: 1;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+/* Responsivo para telas pequenas */
+@media (max-width: 768px) {
+  .floating-logo {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .floating-logo img {
+    width: 90px;
+  }
+
+  .floating-logo img:hover {
+    width: 110px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-logo {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .floating-logo img {
+    width: 70px;
+  }
+
+  .floating-logo img:hover {
+    width: 85px;
+  }
+}

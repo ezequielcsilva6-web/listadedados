@@ -1,0 +1,101 @@
+.header {
+  background: linear-gradient(135deg, #8b0000 0%, #dc143c 50%, #ff6b00 100%);
+  color: white;
+  padding: 40px 20px;
+  box-shadow: 0 8px 32px rgba(220, 20, 60, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="15" fill="rgba(255,255,255,0.05)"/><circle cx="80" cy="80" r="20" fill="rgba(255,255,255,0.05)"/><circle cx="70" cy="30" r="12" fill="rgba(255,255,255,0.03)"/></svg>');
+  opacity: 0.3;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.logo-text {
+  font-size: 2.5em;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4),
+               0 0 20px rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  font-family: 'Arial Black', sans-serif;
+}
+
+.skull-icon {
+  font-size: 2.5em;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.title {
+  margin: 0 0 8px 0;
+  font-size: 2.2em;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: 300;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .header {
+    padding: 30px 15px;
+  }
+
+  .logo-text {
+    font-size: 2em;
+    letter-spacing: 2px;
+  }
+
+  .skull-icon {
+    font-size: 2em;
+  }
+
+  .title {
+    font-size: 1.8em;
+  }
+
+  .subtitle {
+    font-size: 1em;
+  }
+}
